@@ -1,5 +1,5 @@
 <footer class="site">
   <svg class="daisy daisy--footer" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false"><use href="#daisy"/></svg>
   <span>&copy; {{ now.Format "2006" }} {{ .Site.Title }} &mdash; made with &#128156; and a lot of color pencils.</span>
-  <a href="{{ "/index.xml" | relURL }}">Subscribe by RSS</a>
+  <a href="{{ with .Site.Home.OutputFormats.Get "rss" }}{{ .RelPermalink }}{{ end }}">Subscribe by RSS</a>
 </footer>

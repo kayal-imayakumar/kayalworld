@@ -2,7 +2,7 @@
 <a href="{{ $p.RelPermalink }}" class="card">
   <span class="tape"></span>
   {{ with $p.Params.image }}
-  <div class="card-media"><img src="{{ . | relURL }}" alt="{{ $p.Title }}" loading="lazy"></div>
+  <div class="card-media"><img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $p.Title }}" loading="lazy"></div>
   {{ end }}
   <div class="card-text">
     <div class="meta"><span>{{ $p.Date.Format "Jan 2, 2006" }}</span></div>

@@ -9,7 +9,7 @@
 <a href="{{ $featured.RelPermalink }}" class="featured">
   <span class="tape"></span>
   {{ with $featured.Params.image }}
-  <div class="featured-media"><img src="{{ . | relURL }}" alt="{{ $featured.Title }}"></div>
+  <div class="featured-media"><img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $featured.Title }}"></div>
   {{ end }}
   <div class="featured-body">
     <span class="eyebrow">Latest doodle</span>

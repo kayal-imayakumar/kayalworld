@@ -2,7 +2,7 @@
 <svg class="daisy daisy--bg" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false" style="width:180px;height:180px;top:40px;right:-64px;transform:rotate(10deg);"><use href="#daisy"/></svg>
 <svg class="daisy daisy--bg" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false" style="width:140px;height:140px;top:560px;left:-52px;transform:rotate(-12deg);"><use href="#daisy"/></svg>
 <div class="post-view">
-  <a href="{{ "/" | relURL }}" class="back-link">
+  <a href="{{ .Site.Home.RelPermalink }}" class="back-link">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
     Back to the blog
   </a>
@@ -20,7 +20,7 @@
   </div>
   <div class="post-footer">
     <span class="eyebrow" style="margin-bottom:10px;">More doodles</span>
-    <a href="{{ "/" | relURL }}" class="read-link">Back to the blog
+    <a href="{{ .Site.Home.RelPermalink }}" class="read-link">Back to the blog
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </a>
   </div>
