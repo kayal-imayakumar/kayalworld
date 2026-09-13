@@ -1,0 +1,22 @@
+<header class="site">
+  <svg class="daisy daisy--tl" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false"><use href="#daisy"/></svg>
+  <svg class="daisy daisy--tr" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false"><use href="#daisy"/></svg>
+  <div class="header-row">
+    <div class="brand">
+      <a href="{{ "/" | relURL }}" class="wordmark">{{ .Site.Title }}
+        <svg viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M2 9 C 20 1, 38 1, 56 9 S 92 17, 110 9 S 146 1, 164 9 S 200 17, 218 9"
+                fill="none" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <p class="tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+    <nav class="site-nav">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <a href="{{ "/about/" | relURL }}">About</a>
+      <a href="{{ "/index.xml" | relURL }}" class="rss-dot" aria-label="RSS feed">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.4" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>

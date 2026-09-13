@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ $posts := (.Site.GetPage "section" "posts").Pages.ByDate.Reverse }}
+{{ $featured := index $posts 0 }}
+{{ $rest := after 1 $posts }}
+
+<svg class="daisy daisy--bg" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false" style="width:200px;height:200px;top:120px;right:-70px;transform:rotate(8deg);"><use href="#daisy"/></svg>
+<svg class="daisy daisy--bg" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false" style="width:150px;height:150px;top:820px;left:-56px;transform:rotate(-14deg);"><use href="#daisy"/></svg>
+
+<a href="{{ $featured.RelPermalink }}" class="featured">
+  <span class="tape"></span>
+  {{ with $featured.Params.image }}
+  <div class="featured-media"><img src="{{ . | relURL }}" alt="{{ $featured.Title }}"></div>
+  {{ end }}
+  <div class="featured-body">
+    <span class="eyebrow">Latest doodle</span>
+    <h2>{{ $featured.Title }}</h2>
+    <div class="meta"><span>{{ $featured.Date.Format "Jan 2, 2006" }}</span></div>
+    <p class="excerpt">{{ $featured.Params.summary }}</p>
+    <span class="read-link">Read it
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </span>
+  </div>
+</a>
+
+<div class="eyebrow-row">
+  <svg class="daisy daisy--eyebrow" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false"><use href="#daisy"/></svg>
+  <span class="eyebrow">All posts</span>
+</div>
+<div class="grid">
+  {{ range $rest }}
+    {{ partial "post-card.html" . }}
+  {{ end }}
+</div>
+
+{{ partial "garden.html" . }}
+{{ end }}

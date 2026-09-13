@@ -1,0 +1,16 @@
+baseURL = "https://kayalworld.com/"
+locale = "en-us"
+title = "Kayal's World"
+
+[params]
+  tagline = "Doodles, pets, and everyday adventures"
+  author = "Kayal"
+
+[permalinks]
+  posts = "/:contentbasename/"
+
+[outputs]
+  home = ["HTML", "RSS", "SITEMAP"]
+
+[markup.goldmark.renderer]
+  unsafe = true

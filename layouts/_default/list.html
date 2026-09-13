@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="post-view">
+  <h1>{{ .Title }}</h1>
+  <div class="grid" style="margin-top:28px;">
+    {{ range .Pages.ByDate.Reverse }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="post-view">
+  <a href="{{ "/" | relURL }}" class="back-link">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
+    Back to the blog
+  </a>
+  <div class="about-header">
+    {{ with .Params.image }}
+    <span class="avatar-wrap">
+      <img class="avatar" src="{{ . | relURL }}" alt="A portrait of {{ $.Site.Params.author }}">
+      <svg class="daisy daisy--avatar" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false"><use href="#daisy"/></svg>
+    </span>
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+  </div>
+  <div class="page-body">
+    {{ .Content }}
+  </div>
+</div>
+{{ partial "garden.html" . }}
+{{ end }}

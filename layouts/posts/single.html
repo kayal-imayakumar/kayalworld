@@ -1,0 +1,29 @@
+{{ define "main" }}
+<svg class="daisy daisy--bg" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false" style="width:180px;height:180px;top:40px;right:-64px;transform:rotate(10deg);"><use href="#daisy"/></svg>
+<svg class="daisy daisy--bg" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false" style="width:140px;height:140px;top:560px;left:-52px;transform:rotate(-12deg);"><use href="#daisy"/></svg>
+<div class="post-view">
+  <a href="{{ "/" | relURL }}" class="back-link">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
+    Back to the blog
+  </a>
+  <div class="post-header">
+    <svg class="daisy daisy--post" viewBox="-32 -32 64 64" aria-hidden="true" focusable="false"><use href="#daisy"/></svg>
+    <h1>{{ .Title }}</h1>
+    <div class="meta">
+      <span>{{ .Date.Format "Jan 2, 2006" }}</span><span class="dot"></span>
+      <span>{{ .Site.Params.author }}</span><span class="dot"></span>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+  </div>
+  <div class="post-body">
+    {{ .Content }}
+  </div>
+  <div class="post-footer">
+    <span class="eyebrow" style="margin-bottom:10px;">More doodles</span>
+    <a href="{{ "/" | relURL }}" class="read-link">Back to the blog
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</div>
+{{ partial "garden.html" . }}
+{{ end }}
