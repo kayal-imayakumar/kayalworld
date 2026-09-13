@@ -5,6 +5,7 @@ title = "Kayal's World"
 [params]
   tagline = "Doodles, pets, and everyday adventures"
   author = "Kayal"
+  googleAnalyticsID = "G-G37MENGM5D"
 
 [permalinks]
   posts = "/:contentbasename/"
