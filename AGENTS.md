@@ -5,7 +5,17 @@ Pages at kayalworld.com via GitHub Actions.
 
 ## Adding a new post
 
-Create `content/posts/<slug>.md`:
+Three equivalent ways to scaffold one, from fastest to most manual:
+
+- In Claude Code: run `/new-post <title>` — creates the file and image
+  folder, then walks through filling in body/images/summary with you.
+- `./new-post.sh "Post Title"` — creates `content/posts/<slug>.md` with
+  frontmatter pre-filled plus the matching `static/assets/images/<slug>/`
+  folder.
+- `hugo new posts/<slug>.md` — uses `archetypes/posts.md` to do the same,
+  titlecasing the slug into the `title:` field (Hugo's native mechanism).
+
+Or create `content/posts/<slug>.md` by hand:
 
 ```markdown
 ---
